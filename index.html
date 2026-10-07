@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="PolypClean Pathway digital prototype for post-warning jellyfish management at a coastal cooling-water intake.">
+  <meta name="keywords" content="PolypClean, jellyfish, AUV, intake, ENEC, digital prototype">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PolypClean Pathway — Digital Prototype</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+  <script defer src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item pc-home" href="#top" aria-label="PolypClean home"><i class="fas fa-water"></i></a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start nav-centered">
+      <a class="navbar-item" href="#prototype">3D Prototype</a>
+      <a class="navbar-item" href="#placement">Placement</a>
+      <a class="navbar-item" href="#mission">Mission</a>
+      <a class="navbar-item" href="#demo">Demo</a>
+      <a class="navbar-item" href="#validation">Validation</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero publication-header">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="project-kicker">ENEC STUDENT CHALLENGE · DIGITAL PROTOTYPE</div>
+          <div class="publication-title-row">
+            <span class="publication-mark" aria-hidden="true">🪼</span>
+            <h1 class="title is-1 publication-title">PolypClean Pathway</h1>
+          </div>
+          <h2 class="subtitle is-4 publication-tagline">Block the inlet. Clean the channel. Protect Barakah.</h2>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Team PolypClean</span>
+            <span class="author-dot">·</span>
+            <span class="author-block">Post-early-warning jellyfish management</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#prototype" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-cube"></i></span><span>Interactive 3D</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#demo" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-play"></i></span><span>Demo Video</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="./static/docs/PolypClean-Proposal.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Proposal Deck</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prototype" class="hero teaser prototype-hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="prototype-switch" role="tablist" aria-label="Prototype model">
+        <button class="prototype-tab is-active" data-view="mesh" role="tab" aria-selected="true">
+          <span class="tab-index">01</span><span><b>Inlet mesh</b><small>Seaward mouth</small></span>
+        </button>
+        <button class="prototype-tab" data-view="robot" role="tab" aria-selected="false">
+          <span class="tab-index">02</span><span><b>PolypClean AUV</b><small>Channel walls</small></span>
+        </button>
+      </div>
+
+      <div class="prototype-stage">
+        <div class="viewer-toolbar">
+          <div class="viewer-status"><span class="live-dot"></span><span id="viewerStatus">Traveling-belt module · interactive</span></div>
+          <div class="viewer-actions" data-controls="mesh">
+            <button class="mini-button" data-action="mesh-array">Show 3-module array</button>
+            <button class="mini-button" data-action="mesh-motion">Pause belt</button>
+            <button class="mini-button" data-action="mesh-explode">Expose scraper</button>
+          </div>
+          <div class="viewer-actions is-hidden" data-controls="robot">
+            <button class="mini-button" data-action="robot-arm">Deploy arm</button>
+            <button class="mini-button" data-action="robot-lights">Lights off</button>
+            <button class="mini-button" data-action="robot-wall">Hide wall</button>
+          </div>
+        </div>
+        <div id="prototypeViewer" class="prototype-viewer" aria-label="Interactive PolypClean 3D concept viewer"></div>
+        <div class="viewer-bottom">
+          <span>Drag to orbit · scroll to zoom</span>
+          <button class="text-button" data-action="reset-view"><i class="fas fa-undo-alt"></i> Reset view</button>
+        </div>
+      </div>
+
+      <div class="model-detail-panel" data-detail-panel="mesh">
+        <button class="detail-chip" data-part="belt"><span>01</span><b>Perforated belt</b><small>Moves continuously around both drums.</small></button>
+        <button class="detail-chip" data-part="drums"><span>02</span><b>Rotating drums</b><small>Drive and return the belt loop.</small></button>
+        <button class="detail-chip" data-part="scraper"><span>03</span><b>Fixed scraper</b><small>Cleans the belt every pass without chemical dosing.</small></button>
+        <button class="detail-chip" data-part="frame"><span>04</span><b>Module frame</b><small>Identical sections gang side-by-side across the inlet.</small></button>
+      </div>
+      <div class="model-detail-panel is-hidden" data-detail-panel="robot">
+        <button class="detail-chip" data-part="camera"><span>01</span><b>Camera + LEDs</b><small>Find and inspect candidate colonies.</small></button>
+        <button class="detail-chip" data-part="sonar"><span>02</span><b>Sonar</b><small>Mapping and positioning when visibility falls.</small></button>
+        <button class="detail-chip" data-part="thrusters"><span>03</span><b>Thrusters</b><small>Hold position close to hard surfaces.</small></button>
+        <button class="detail-chip" data-part="arm"><span>04</span><b>Removal arm</b><small>Gentle scraper / micro-cutter at the target.</small></button>
+        <button class="detail-chip" data-part="suction"><span>05</span><b>Suction + collection</b><small>Captures detached material instead of releasing it.</small></button>
+      </div>
+
+      <h2 class="subtitle has-text-centered prototype-caption" id="prototypeCaption">
+        One self-cleaning module in close-up. The full barrier is formed by repeating this module side-by-side across the inlet mouth.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section id="placement" class="hero is-light is-small placement-strip">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-vcentered is-variable is-6">
+        <div class="column is-7">
+          <figure class="image-card site-card">
+            <img src="./static/images/site-key.jpg" alt="Barakah intake pathway showing breakwater, intake channel and forebay">
+          </figure>
+        </div>
+        <div class="column is-5">
+          <div class="content placement-copy">
+            <div class="eyebrow">PLACEMENT, NOT A COMBINED MACHINE</div>
+            <h2 class="title is-3">Two locations along one intake pathway.</h2>
+            <div class="placement-step"><span>1</span><div><b>At the seaward mouth</b><p>Modular traveling-belt sections span the defined inlet and exclude incoming adult jellyfish.</p></div></div>
+            <div class="placement-step"><span>2</span><div><b>Inside the channel</b><p>The AUV patrols hard walls, breakwater surfaces and forebay areas independently of the barrier.</p></div></div>
+            <div class="placement-step"><span>3</span><div><b>Plant systems stay untouched</b><p>The concept sits marine-side after early warning; existing intake protection remains in place.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section mechanism-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="eyebrow">MECHANICAL DETAIL</div>
+        <h2 class="title is-3">The barrier is a moving loop, not a static fence.</h2>
+        <div class="content intro-copy">
+          <p>The black perforated belt travels around two vertical drums. At the drive side it passes a fixed scraper, so each patch of belt is cleaned on every circuit. The 3D viewer keeps that mechanism visible instead of flattening it into a generic screen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered is-vcentered mechanism-grid">
+      <div class="column is-5">
+        <figure class="reference-figure white-figure">
+          <img src="./static/images/mesh-cad.png" alt="Original PolypClean rotating mesh module CAD concept">
+          <figcaption>Deck geometry reference: two drums, perforated belt, scraper plate, indicator beacon.</figcaption>
+        </figure>
+      </div>
+      <div class="column is-7">
+        <div class="sequence-list">
+          <article><span>01</span><div><h3>Belt advances</h3><p>Through-flow continues through the perforations while the belt circulates around the two vertical drums.</p></div></article>
+          <article><span>02</span><div><h3>Fouling reaches the cleaning side</h3><p>Any attached residue is carried to the drive pillar instead of remaining on one fixed surface.</p></div></article>
+          <article><span>03</span><div><h3>Scraper disrupts attachment</h3><p>A fixed plate contacts the moving belt and mechanically clears it on each pass.</p></div></article>
+          <article><span>04</span><div><h3>Modules repeat across the mouth</h3><p>The close-up is one section; identical sections are ganged to cover the inlet width and remain serviceable individually.</p></div></article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mission" class="section robot-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered is-vcentered is-variable is-7">
+      <div class="column is-6">
+        <div class="content">
+          <div class="eyebrow">AUV MISSION</div>
+          <h2 class="title is-3">Work the wall, one verified patch at a time.</h2>
+          <p>The robot is not the barrier. It operates deeper in the sheltered waterway where hard surfaces can host colonies. The model is built around the deck hardware: forward vision and lighting, sonar, station-keeping thrusters, an articulated removal arm, and a collection path.</p>
+        </div>
+        <div class="mission-steps">
+          <div class="mission-step"><span>01</span><b>Detect</b><small>Camera + LEDs flag a candidate colony.</small></div>
+          <div class="mission-step"><span>02</span><b>Remove</b><small>Hold position and place the tool on target.</small></div>
+          <div class="mission-step"><span>03</span><b>Collect</b><small>Suction captures detached material.</small></div>
+          <div class="mission-step"><span>04</span><b>Continue</b><small>Verify, log the location, move to the next patch.</small></div>
+        </div>
+      </div>
+      <div class="column is-6">
+        <figure class="reference-figure dark-figure">
+          <img src="./static/images/robot-hero.jpg" alt="PolypClean AUV working beside a hard underwater wall">
+          <figcaption>Visual target for the prototype: compact inspection AUV operating close to a channel wall.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small concept-gallery">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="eyebrow">SYSTEM AT A GLANCE</div>
+          <h2 class="title is-3">Keep the two interventions visually separate.</h2>
+        </div>
+      </div>
+      <div class="columns gallery-columns">
+        <div class="column"><figure class="gallery-card"><img src="./static/images/mesh-hero.png" alt="Modular barrier concept across the inlet"><figcaption><b>Inlet mouth</b><span>Adult exclusion + self-cleaning modules.</span></figcaption></figure></div>
+        <div class="column"><figure class="gallery-card"><img src="./static/images/robot-hero.jpg" alt="AUV inspecting channel wall"><figcaption><b>Channel wall</b><span>Inspection, targeted removal and collection.</span></figcaption></figure></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="demo" class="section demo-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="eyebrow">1–2 MINUTE DIGITAL PROTOTYPE</div>
+        <h2 class="title is-3">Demo video</h2>
+        <div class="publication-video local-video-wrap">
+          <video id="demoVideo" controls playsinline poster="./static/images/robot-poster.jpg">
+            <source src="./static/videos/demo.mp4" type="video/mp4">
+          </video>
+          <div class="video-missing" id="videoMissing">
+            <i class="fas fa-video"></i>
+            <b>Demo video unavailable</b>
+            <span>Check static/videos/demo.mp4</span>
+          </div>
+        </div>
+        <p class="demo-note">The required 1–2 minute prototype video is bundled directly with this site and plays from the same GitHub Pages deployment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="validation" class="section validation-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="eyebrow">IF SHORTLISTED</div>
+        <h2 class="title is-3">Prove the pathway in three increasingly realistic steps.</h2>
+      </div>
+    </div>
+    <div class="validation-grid">
+      <article><span class="phase">PHASE 1</span><h3>Lab & tank</h3><p>Measure mesh through-flow and self-cleaning behavior; test vision, tool force and suction capture on representative surfaces.</p></article>
+      <article><span class="phase">PHASE 2</span><h3>Mock channel</h3><p>Run a scaled inlet plus wall mission and compare before/after surface coverage, collection success and intervention time.</p></article>
+      <article><span class="phase">PHASE 3</span><h3>Site-like analogue</h3><p>Demonstrate the barrier and AUV in one intake-like geometry while keeping the two systems operationally independent.</p></article>
+    </div>
+
+    <div class="assumption-box">
+      <div><b>Prototype assumptions</b><p>Dimensions, aperture, hydraulic loading, pressure rating and final materials are not site-approved design data. They remain engineering inputs for a later detailed design.</p></div>
+      <div><b>Operational limit</b><p>Visibility may degrade in turbidity, so the concept pairs optical inspection with sonar and supervised autonomy rather than assuming vision alone.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content footer-content">
+          <p><b>PolypClean Pathway</b> · Team PolypClean · ENEC Student Challenge</p>
+          <p>This digital prototype adapts the open-source <a href="https://nerfies.github.io/" target="_blank" rel="noopener">Nerfies project-page template</a>. The Nerfies website source is licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>; this adaptation preserves attribution.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
